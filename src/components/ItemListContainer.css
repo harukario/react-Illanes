@@ -1,0 +1,16 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-height: 10rem;
+    background-color: lightgrey;
+
+}
+ul {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;}
+
+    li{
+        list-style: none;
+    }
