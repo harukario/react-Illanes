@@ -2,7 +2,7 @@
 import React from 'react';
 import { useState } from "react";
 import "./ItemCount.css";
-import {ButtonGroup, Card, CardContent, Button, Typography} from '@mui/material';
+import {ButtonGroup, CardContent, Button,} from '@mui/material';
 
 const ItemCount =(props) =>{
 
@@ -27,30 +27,25 @@ const ItemCount =(props) =>{
     const onAdd = ()=>{
         const save= counter;
         if(counter>props.initial){
-            alert( `Se añadieron ${save} productos a tu carrito ` )
+            alert( `Se añadieron ${save} ${props.producto} a tu carrito ` )
         }
        
     }
 return(
     <div className="container"> 
-            <Card sx={{ maxWidth: 300 }}>
-            <CardContent>
-        
-            <Typography variant="p" component="div">
-                Producto
-            </Typography>
-            
+          
+        <CardContent>
             <div>
-                <ButtonGroup variant="outlined" aria-label="outlined button group">
+                <ButtonGroup variant="outlined" aria-label="small outlined button group"  size="small"  >
                 <Button onClick={HandlerCounterDown}>-</Button>
                 <Button>{counter}</Button>
                 <Button  onClick={HandlerCounterUp}>+</Button>
                 </ButtonGroup>
-        </div>
+            </div>
             <Button onClick={onAdd}>Agregar al carrito </Button>
         
-            </CardContent>
-        </Card>
+        </CardContent>
+        
   </div>
 )
 

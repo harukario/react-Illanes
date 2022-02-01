@@ -1,0 +1,13 @@
+.ItemListContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+
+}
+
+.ItemContainer{
+    margin:20px;
+    margin-top:50px;
+}
