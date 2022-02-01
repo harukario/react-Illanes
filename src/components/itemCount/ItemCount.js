@@ -26,7 +26,10 @@ const ItemCount =(props) =>{
     
     const onAdd = ()=>{
         const save= counter;
-        alert( `Se añadieron ${save} productos a tu carrito ` )
+        if(counter>props.initial){
+            alert( `Se añadieron ${save} productos a tu carrito ` )
+        }
+       
     }
 return(
     <div className="container"> 
