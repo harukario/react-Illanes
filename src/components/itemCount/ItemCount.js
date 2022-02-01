@@ -1,44 +1,40 @@
 
 import React from 'react';
+import { useState } from "react";
 import "./ItemCount.css";
-import ButtonGroup from '@mui/material/ButtonGroup';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import {ButtonGroup, Card, CardContent, Button, Typography} from '@mui/material';
 
-const ItemCount =() =>{
+const ItemCount =(props) =>{
 
-    const stock= 20
+    const [counter,setCounter]= useState(0)
 
-
-    const [counter,setCounter]= React.useState(0)
     const HandlerCounterUp = () =>{
-        if (counter<stock){
+        if (counter<props.stock){
             setCounter (counter + 1)
         }
         else{
-            alert("No hay stock disponible")
+            alert ("No hay stock disponible")
         }
+    }
         
-    }
-    
-    
+        
     const HandlerCounterDown = () =>{
-        if (counter >=1 ){
-        setCounter (counter - 1)}
-            else{
-                setCounter (counter)
-            }
+        if (counter>props.initial){
+        setCounter (counter - 1)
+        }
     }
     
+    const onAdd = ()=>{
+        const save= counter;
+        alert( `Se añadieron ${save} productos a tu carrito ` )
+    }
 return(
     <div className="container"> 
             <Card sx={{ maxWidth: 300 }}>
             <CardContent>
         
             <Typography variant="p" component="div">
-            Producto
+                Producto
             </Typography>
             
             <div>
@@ -48,6 +44,7 @@ return(
                 <Button  onClick={HandlerCounterUp}>+</Button>
                 </ButtonGroup>
         </div>
+            <Button onClick={onAdd}>Agregar al carrito </Button>
         
             </CardContent>
         </Card>
